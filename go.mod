@@ -1,4 +1,4 @@
-module github.com/kitagry/contentful-go
+module github.com/nicholasting/contentful-go
 
 go 1.18
 
