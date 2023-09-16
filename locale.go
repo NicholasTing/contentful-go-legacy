@@ -115,13 +115,14 @@ func (service *LocalesService) Upsert(ctx context.Context, spaceID string, local
 	if locale.Sys != nil && locale.Sys.CreatedAt != ""  {
 		path = fmt.Sprintf("/spaces/%s/locales/%s", spaceID, locale.Sys.ID)
 		method = "PUT"
-	} else if locale.Sys != nil && locale.ENV_ID != "" {
-		path = fmt.Sprintf("/spaces/%s/environments/%s/locales", spaceID, locale.ENV_ID)
-		method = "PUT"
 	} else {
 		path = fmt.Sprintf("/spaces/%s/locales", spaceID)
 		method = "POST"
 	}
+	// else if locale.Sys != nil && locale.ENV_ID != "" {
+	// 	path = fmt.Sprintf("/spaces/%s/environments/%s/locales", spaceID, locale.ENV_ID)
+	// 	method = "PUT"
+	// } 
 
 	req, err := service.c.newRequest(ctx, method, path, nil, bytes.NewReader(bytesArray))
 	if err != nil {
