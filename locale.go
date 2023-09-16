@@ -37,7 +37,7 @@ type Locale struct {
 	CMA bool `json:"contentManagementApi"`
 
 	// Environment id
-	ENV_ID string `json:"envid,omitempty"`
+	// ENV_ID string `json:"envid,omitempty"`
 }
 
 // GetVersion returns entity version
